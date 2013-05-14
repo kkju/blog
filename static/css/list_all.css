@@ -1,0 +1,68 @@
+.head {
+    background-color: gray;
+    text-align: center;
+    top:15px;
+    left: 450px;
+    font-weight: bold;
+    padding: 0 40px;
+    padding-top: 0px;
+    height: 45px;
+    text-transform: uppercase;
+    font: bold 50px/1em Arial, sans-serif;
+
+}
+
+.img{
+     max-width:600px;height:auto;cursor:pointer;
+     border:1px dashed #4E6973;padding: 3px;
+     zoom:expression( function(elm) {
+         if (elm.width>10) {
+             var oldVW = elm.width; elm.width=10;
+             elm.height = elm.height*(10 /oldVW);
+         }
+         elm.style.zoom = '1';
+     }(this));
+}
+
+.img1 {
+width:expression(this.offsetwidth>16 ? 16 : true); /*自行修改图片宽度*/
+height:expression(this.offsetheight>18 ? 18 : true); /*自行修改图片高度*/
+}
+
+.content-width {
+    MARGIN: auto;
+    WIDTH: 60px;}
+.content-width img{
+    MAX-WIDTH: 100%!important;
+    HEIGHT: auto!important;
+    width:expression(this.width > 60 ? "60px" : this.width)!important;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.black {
+    background-color: black;
+}
+
+.content{
+    text-align: center;
+    background-color: silver;
+    width: 500px;
+    height: 1000px;
+    margin-left: 370px;
+}
+
+a {font-weight:bold; /*粗体*/
+font-size:16px;/*字体大小*/
+font-family:arial;/*字体为arial*/
+color:#000000;/*black*/
+background-color:#fffff/*背景色白色*/
+}
+
+.white{
+    background-color: silver;
+    width: 1270px;
+    height: 10px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html class='gray' lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="Login page">
+    <meta name="author" content="kk">
+    {% block css%}
+    <link href="{{STATIC_URL}}css/welcome.css" rel="stylesheet" type="text/css" />
+    {% endblock %}
+</head>
+<body>
+    <div class='gray'>
+    <h1 class="head" align="center">Welcome to my blog</h1>
+    <hr/>
+    </div>
+    {% block content %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="img" href='/myblogs'><img src="{{STATIC_URL}}img/welcome.gif"/ alt="Picture not find!"></a>
+    <a class="img" href="/myblogs"><img src="{{STATIC_URL}}img/welcome.gif"/ alt="Picture not find!"></a>
+    <a class="img" href="/myblogs"><img src="{{STATIC_URL}}img/welcome.gif"/ alt="Picture not find!"></a>
+    <a class="img" href="/myblogs"><img src="{{STATIC_URL}}img/welcome.gif"/ alt="Picture not find!"></a>
+    <br/>
+    {% endblock %}
+    {% block footer %}
+    <hr/>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <p align="center">Thanks for visiting my site.</p>
+    {% endblock %}
+</body>
+{% block js %}
+    <script language="javascript" src="{{STATIC_URL}}js/welcome.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}jquery/jquery.lazyload.js"></script> 
+    <script type="text/javascript"> 
+    jQuery(document).ready( 
+    function($){ 
+    $("{{STATIC_URL}}img/welcome.gif").lazyload({ 
+    placeholder : "{{STATIC_URL}}img/grey.jpg",
+    effect      : "fadeIn" 
+    }); 
+    }); 
+    </script>
+    {% endblock %}
+</html>

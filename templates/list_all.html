@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en" class='gray'>
+<head>
+    <title>{% block title %}Blog list{% endblock %}</title>
+    {% block css%}
+    <link href="{{STATIC_URL}}css/list_all.css" rel="stylesheet" type="text/css" />
+    {% endblock %}
+</head>
+<body>
+<div class="gray">
+    <h1 class="head">Welcome to kk's blog</h1>
+    <hr/>
+    <div>
+<div class="white"></div>
+<div class="content">
+    {% if data %}
+    {% for page in data %}
+    <a href="/blogs/{{ page.id }}/"><p>{{ page.name }}</p></a>
+    {% if page.photo %}
+    <img class="content-width" src="/{{ page.photo }}" mce_src="photo/kebiao.png">
+    <hr/>
+    {% else %}
+    <img class='content-width' src="{{STATIC_URL}}img/welcome.gif"/ alt="Picture not find!">
+    <hr>
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    <p>Cann't find the passages!</p>
+    {% endif %}
+</div>
+    <p align="center">Thanks for visiting my site.</p>
+</body>
+</html>
